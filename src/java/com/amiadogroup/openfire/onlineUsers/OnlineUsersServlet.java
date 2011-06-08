@@ -46,7 +46,8 @@ public class OnlineUsersServlet extends HttpServlet {
 	private static final long serialVersionUID = -329699890203170575L;
 
 	/**
-	 * Initialize servlet & add exclude to authcheck for http://yourserver:9090/plugins/onlineusers.
+	 * Initialize servlet & add exclude to authcheck for
+	 * http://yourserver:9090/plugins/onlineusers.
 	 */
 	public void init(ServletConfig servletConfig) throws ServletException {
 		super.init(servletConfig);
@@ -59,27 +60,28 @@ public class OnlineUsersServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
-		
-		Collection<ClientSession> sessions = SessionManager.getInstance().getSessions();
-        Set<String> users = new HashSet<String>(sessions.size());
-        for (ClientSession session : sessions) {
-            users.add(session.getAddress().toBareJID());
-        }
-        
-        response.setContentType("text/plain");
-        PrintWriter out = response.getWriter();
-        out.println(String.valueOf(users.size()));
-        out.flush();
+
+		Collection<ClientSession> sessions = SessionManager.getInstance()
+				.getSessions();
+		Set<String> users = new HashSet<String>(sessions.size());
+		for (ClientSession session : sessions) {
+			users.add(session.getAddress().toBareJID());
+		}
+
+		response.setContentType("text/plain");
+		PrintWriter out = response.getWriter();
+		out.println(String.valueOf(users.size()));
+		out.flush();
 	}
-	
+
 	/**
 	 * Destroy - remove the exclude filter
 	 */
 	@Override
 	public void destroy() {
-        super.destroy();
-        
-        // Release the excluded URL
-        AuthCheckFilter.removeExclude("onlineusers");
-    }
+		super.destroy();
+
+		// Release the excluded URL
+		AuthCheckFilter.removeExclude("onlineusers");
+	}
 }
