@@ -4,7 +4,7 @@
     <class>com.amiadogroup.openfire.onlineUsers.OnlineUsersPlugin</class>
     <name>Online Users Service</name>
     <description>Exposes online users information through HTTP.</description>
-    <author>Amiado Group AG</author>
+    <author>Amiado Group</author>
     <version>1.0.0</version>
     <date>8/6/2011</date>
     <minServerVersion>3.7.0</minServerVersion>
