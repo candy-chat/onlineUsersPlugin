@@ -5,7 +5,7 @@
     <name>Online Users Service</name>
     <description>Exposes online users information through HTTP.</description>
     <author>Amiado Group</author>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <date>8/6/2011</date>
     <minServerVersion>3.7.0</minServerVersion>
 	<url>https://github.com/amiadogroup/onlineUsersPlugin</url>

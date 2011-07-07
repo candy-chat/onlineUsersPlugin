@@ -27,9 +27,21 @@
 	</head>
 	<body>
 		<h1>OnlineUsers Plugin Readme</h1>
+		<h2>Number of online users</h2>
 		<div>
 			The OnlineUsers Plugin exposes the number of currently online users through HTTP.<br />
 			<br />Just open <pre>http://yourserver:9090/plugins/onlineusers</pre> to get it.
+		</div>
+		<h2>List of online users</h2>
+		<div>
+			Additionally, also the list of online users is exposed through HTTP in the JSON format.<br />
+			<br />Just open <pre>http://yourserver:9090/plugins/onlineusers/list</pre> to get it. 
+		</div>
+		<h2>Settings</h3>
+		<div>
+			If the list of online users should be public (no admin authentication needed), add the following setting to your
+			system properties in the admin console:<br/>
+			<pre>plugin.onlineUsers.list.disableAuth = true</pre>
 		</div>
 		<div id="footer">Brought to you by <a href="http://www.amiadogroup.com" title="Amiado Group">Amiado Group</a> &mdash; Source available on <a href="http://github.com/amiadogroup/onlineUsersPlugin" title="GitHub repository">GitHub</a></div>
 	</body>
